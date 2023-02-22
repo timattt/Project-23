@@ -12,8 +12,12 @@
 
 class T: public Node {
 public:
+
+	// contructor and destructor
 	T();
 	~T();
+
+	// public methods
 	void makeTree(Syntaxizer *snt) override;
 	double interpritate() override;
 };

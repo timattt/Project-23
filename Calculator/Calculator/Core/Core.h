@@ -15,15 +15,33 @@
 
 
 // CONSTANTS
+/**
+ * Список операторов. Использует при токенизации
+ */
 const char OPERATORS[] = {'+', '-', '/', '*', '(', ')'};
+/**
+ * Список разделителей не учитывается при токениации.
+ */
 const char DELIMITERS[] = {' '};
 
 
 // PRIVATE METHODS
 //tokenizer
+/**
+ * Разбиваем строку на токены и кладем их в вектор
+ */
 void tokenize(std::string line, std::vector<Token*> & result);
-void printTokens(std::vector<Token*> & tokens);
+/**
+ * ыводи в консоль вектор из токенов
+ */
+void printTokens(const std::vector<Token*> & tokens);
 
 // utilities
+/**
+ * Создаем картинку дерева
+ */
 void makeGraph(Token * root);
-void printFancyInfoAboutTokensError(std::vector<Token*> & tokens, int bad);
+/**
+ * Если какой-то токен не подходит под грамматику, то можно этой функцией вывести красиво в консоль сообщение ошибке
+ */
+void printFancyInfoAboutTokensError(const std::vector<Token*> & tokens, int bad);

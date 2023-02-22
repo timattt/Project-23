@@ -67,7 +67,7 @@ void tokenize(std::string line, std::vector<Token*> & result) {
 	}
 }
 
-void printTokens(std::vector<Token*> & tokens) {
+void printTokens(const std::vector<Token*> & tokens) {
 	printf("[");
 	for (unsigned i = 0; i < tokens.size(); i++) {
 		if (tokens[i]->operat == 0) {

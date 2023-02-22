@@ -6,9 +6,11 @@ int dfsToDotFile(Token * root, std::ofstream & dest, bool top) {
 		dest << "digraph  G {";
 	}
 
+	// это индекс данной вершины
 	int index = rand() % 100000;//совпадение индексов очень маловероятно
 
-	Node * nd = (Node*)dynamic_cast<Node*>(root);
+	// для вершин не листьев
+	Node * nd = (Node*) dynamic_cast<Node*>(root);
 
 #ifdef DEBUG
 	if (nd != nullptr) {
@@ -17,7 +19,7 @@ int dfsToDotFile(Token * root, std::ofstream & dest, bool top) {
 #endif
 	dest << "vert" << index << "[label=" << '"' << root->toString()  << '"' << "]\n";
 
-
+	// ребра
 	if (nd != nullptr) {
 		std::vector<int> indices;
 		for (Token *tk : nd->children) {
@@ -46,7 +48,7 @@ void makeGraph(Token *root) {
 	std::remove("tmp.dot");
 }
 
-void printFancyInfoAboutTokensError(std::vector<Token*> & tokens, int bad) {
+void printFancyInfoAboutTokensError(const std::vector<Token*> & tokens, int bad) {
 	std::string res = {};
 	for (int i = 0; i < bad; i++) {
 		Token * t = tokens[i];

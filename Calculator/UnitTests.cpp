@@ -5,6 +5,10 @@
 
 #include "Calculator/Calculator.h"
 
+/**
+ * Сравниваем результат вычисления на питоне и через код.
+ * Выводим в консоль
+ */
 bool compare(std::string line) {
 	std::string cmd = "python -c \"print("+line+")\"";
 
@@ -30,6 +34,10 @@ bool compare(std::string line) {
 	return ok;
 }
 
+/**
+ * Тесты, которые генерируют рандомные выражения
+ */
+//=====================================================
 std::string genSimpleTest1(int k) {
 	std::string res = "";
 	for (int i = 0; i < k; i++) {
@@ -95,7 +103,11 @@ std::string genTest2(int k) {
 	res+=std::to_string(1+rand()%10);
 	return res;
 }
+//=====================================================
 
+/**
+ * Запускает шаблонный тест. Возвращает кол успешных итераций.
+ */
 int pattern(std::string (*testFunc)(int), int total, int len) {
 	int err = 0;
 	for (int i = 0; i < total; i++) {
@@ -132,4 +144,3 @@ int main() {
 
 	return 0;
 }
-
