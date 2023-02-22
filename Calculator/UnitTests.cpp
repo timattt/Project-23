@@ -112,10 +112,7 @@ int pattern(std::string (*testFunc)(int), int total, int len) {
 	int err = 0;
 	for (int i = 0; i < total; i++) {
 		std::string test = testFunc(len);
-		//printf("%s\n", test.c_str());
-		if (compare(test)) {
-			//printf("OK\n");
-		} else {
+		if (!compare(test)) {
 			err++;
 			printf("ERROR: %s\n", test.c_str());
 			break;
@@ -126,20 +123,18 @@ int pattern(std::string (*testFunc)(int), int total, int len) {
 }
 
 int main() {
-
-	int totalUnits = 4;
-	int totalPerUnit = 50;
-	int len = 7;
+#define TOTAL_PER_TEST 50
+#define TEST(FUNC, LEN) oks.push_back(pattern(FUNC, TOTAL_PER_TEST, LEN));
 
 	std::vector<int> oks;
 
-	oks.push_back(pattern(genSimpleTest1, totalPerUnit, 50));
-	oks.push_back(pattern(genSimpleTest2, totalPerUnit, 50));
-	oks.push_back(pattern(genTest1, totalPerUnit, len));
-	oks.push_back(pattern(genTest2, totalPerUnit, len));
+	TEST(genSimpleTest1, 50)
+	TEST(genSimpleTest2, 50)
+	TEST(genTest1, 7)
+	TEST(genTest2, 7)
 
-	for (int i = 0; i < totalUnits; i++) {
-		printf("%d/%d\n", oks[i], totalPerUnit);
+	for (unsigned i = 0; i < oks.size(); i++) {
+		printf("%d/%d\n", oks[i], TOTAL_PER_TEST);
 	}
 
 	return 0;
