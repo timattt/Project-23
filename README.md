@@ -2,7 +2,8 @@
 
 Пишем полноценный калькулятор, используя алгоритм рекурсивного спуска.
 
-Общую идею берем из [**legacy**](https://github.com/timattt/Easy-py-calculator)
+Общую идею берем из [**legacy**](https://github.com/timattt/Easy-py-calculator).
+Только грамматику делаем более правильной.
 
 ## Грамматика
 
