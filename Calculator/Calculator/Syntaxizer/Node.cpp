@@ -45,6 +45,6 @@ double Node::interpritate() {
 	return -1;
 }
 
-const std::string && Node::toString() {
-	return std::move(name);
+std::string Node::toString() {
+	return name;
 }

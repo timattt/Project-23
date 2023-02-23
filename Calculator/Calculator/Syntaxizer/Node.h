@@ -36,7 +36,7 @@ public:
 	void addToken(Token * tkn);
 
 	/**выводит имя нетерминала*/
-	const std::string && toString() final override;
+	std::string toString() final override;
 
 protected:
 

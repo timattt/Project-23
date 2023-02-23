@@ -30,13 +30,13 @@ bool Token::isNumber() {
 	return operat == 0;
 }
 
-const std::string && Token::toString() {
+std::string Token::toString() {
 	if (isNumber()) {
-		return std::move(std::to_string(number));
+		return (std::to_string(number));
 	}
 	if (isOperator()) {
-		return std::move(std::string(1, operat));
+		return (std::string(1, operat));
 	}
 
-	return std::move(std::string("unknown"));
+	return (std::string("unknown"));
 }
