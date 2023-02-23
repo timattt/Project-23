@@ -32,11 +32,11 @@ bool Token::isNumber() {
 
 const std::string && Token::toString() {
 	if (isNumber()) {
-		return std::to_string(number);
+		return std::move(std::to_string(number));
 	}
 	if (isOperator()) {
-		return std::string(1, operat);
+		return std::move(std::string(1, operat));
 	}
 
-	return "unknown";
+	return std::move(std::string("unknown"));
 }
