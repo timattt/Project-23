@@ -25,7 +25,7 @@ bool isDelimiter(char c) {
 	return false;
 }
 
-void tokenize(std::string line, std::vector<Token*> & result) {
+void tokenize(const std::string & line, std::vector<Token*> & result) {
 	int numberStart = -1;
 	for (unsigned i = 0; i < line.length(); i++) {
 		char cur = line[i];

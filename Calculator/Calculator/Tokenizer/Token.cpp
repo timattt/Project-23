@@ -9,6 +9,7 @@
 #include <string>
 
 Token::Token(int num) : number(num), operat(0) {
+
 }
 
 Token::Token(char oper) : number(0), operat(oper) {
@@ -29,7 +30,7 @@ bool Token::isNumber() {
 	return operat == 0;
 }
 
-std::string Token::toString() {
+const std::string && Token::toString() {
 	if (isNumber()) {
 		return std::to_string(number);
 	}

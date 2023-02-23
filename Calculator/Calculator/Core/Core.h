@@ -30,7 +30,7 @@ const char DELIMITERS[] = {' '};
 /**
  * Разбиваем строку на токены и кладем их в вектор
  */
-void tokenize(std::string line, std::vector<Token*> & result);
+void tokenize(const std::string & line, std::vector<Token*> & result);
 /**
  * ыводи в консоль вектор из токенов
  */

@@ -29,7 +29,7 @@ public:
 	bool isNumber();
 
 	// Methods
-	virtual std::string toString();
+	virtual const std::string && toString();
 
 	// Public fields
 	int number;

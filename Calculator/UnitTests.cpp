@@ -9,7 +9,7 @@
  * Сравниваем результат вычисления на питоне и через код.
  * Выводим в консоль
  */
-bool compare(std::string line) {
+bool compare(const std::string & line) {
 	std::string cmd = "python -c \"print("+line+")\"";
 
 	FILE *in = popen(cmd.c_str(), "r");

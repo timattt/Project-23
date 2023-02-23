@@ -11,7 +11,7 @@
 #include "Node.h"
 #include "Nodes/G.h"
 
-Syntaxizer::Syntaxizer(std::vector<Token*> & tokens) : tokens(tokens), current(0) {
+Syntaxizer::Syntaxizer(const std::vector<Token*> & tokens) : tokens(tokens), current(0) {
 }
 
 Syntaxizer::~Syntaxizer() {

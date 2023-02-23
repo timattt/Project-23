@@ -7,7 +7,7 @@
 
 #include "Node.h"
 
-Node::Node(std::string name) : Token(0), name(name) {
+Node::Node(const std::string & name) : Token(0), name(name) {
 }
 
 Node::~Node() {
@@ -45,6 +45,6 @@ double Node::interpritate() {
 	return -1;
 }
 
-std::string Node::toString() {
-	return name;
+const std::string && Node::toString() {
+	return std::move(name);
 }

@@ -20,7 +20,7 @@ class Syntaxizer {
 public:
 
 	// constructor and destructor
-	Syntaxizer(std::vector<Token*> & tokens);
+	Syntaxizer(const std::vector<Token*> & tokens);
 	~Syntaxizer();
 
 	// public methods
@@ -62,7 +62,7 @@ private:
 	/**
 	 * Список токенов
 	 */
-	std::vector<Token*> & tokens;
+	const std::vector<Token*> & tokens;
 
 	/**
 	 * Номер текущего токена

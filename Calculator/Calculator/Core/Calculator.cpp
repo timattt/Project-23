@@ -3,7 +3,7 @@
 
 //#define DEBUG
 
-double calculate(std::string line) {
+double calculate(const std::string & line) {
 	// TOKENIZATION
 	std::vector<Token*> tokens;
 	tokenize(line, tokens);

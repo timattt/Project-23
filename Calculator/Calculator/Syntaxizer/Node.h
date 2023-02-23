@@ -22,7 +22,7 @@ class Node : public Token {
 public:
 
 	// Constructor and destructor
-	Node(std::string name);
+	Node(const std::string & name);
 	~Node();
 
 	// Public fields
@@ -36,7 +36,7 @@ public:
 	void addToken(Token * tkn);
 
 	/**выводит имя нетерминала*/
-	std::string toString() final override;
+	const std::string && toString() final override;
 
 protected:
 
